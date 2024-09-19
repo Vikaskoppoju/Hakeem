@@ -1,183 +1,499 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Khalid ul Rehman Hakeem Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-      /* Additional custom styles */
-      .hero {
-        background-image: url('./images/horizontal-science-banner-with-glass-containers_23-2149495069.avif'); /* Replace with your desired image URL */
-        background-size: cover;
-        background-position: center;
-        padding: 100px 0; /* Adjust padding for proper spacing */
-        text-align: center;
-        color: white; /* Ensures text is readable over the image */
-        position: relative;
-        z-index: 1;
-      }
 
-      /* Optional: Add a semi-transparent overlay for better text readability */
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-        z-index: -1; /* Place behind content */
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khalid ul Rehman Hakeem Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap CSS (if not already included) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <style>
+    /* Hero Section */
+    .hero {
+      background-image: url('./images/horizontal-science-banner-with-glass-containers_23-2149495069.avif');
+      /* Replace with your desired image URL */
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Optional: Semi-transparent overlay for better text readability */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black overlay with 50% opacity */
+      z-index: -1;
+    }
+
+    .counter-item {
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .counter-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .counter-icon {
+      font-size: 50px;
+      /* Increased size for better visibility */
+      color: #a5a7aa;
+      /* Set a custom color for the icons */
+      margin-bottom: 20px;
+      /* Space between the icon and the circle */
+      transition: color 0.3s ease-in-out;
+      /* Smooth color transition on hover */
+    }
+
+    .counter-item:hover .counter-icon {
+      color: #0056b3;
+      /* Darker shade of blue on hover */
+    }
+
+    .counter-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #797c7f;
+      color: white;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .counter-item:hover .counter-circle {
+      background-color: #0056b3;
+      /* Darker shade of blue on hover */
+    }
+
+    .counter p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #6c757d;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .counter-icon {
+        font-size: 40px;
       }
 
       .counter-circle {
         width: 100px;
         height: 100px;
-        border-radius: 50%;
-        background-color: #007bff;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        margin: 20px auto;
+        font-size: 30px;
       }
 
-      .blog-card img {
-        height: 200px;
-        object-fit: cover;
+      .counter p {
+        font-size: 16px;
       }
+    }
 
+
+    /* Responsive Adjustments for Awards Section */
+    @media (max-width: 768px) {
       .awards-section {
-        background-color: #e9ecef;
-        padding: 50px 0;
+        margin-top: 30px;
       }
 
-      .contact-form {
-        background-color: #f8f9fa;
-        padding: 50px 0;
+      .counter-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
       }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Khalid ul Rehman Hakeem</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Publications</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Heart Talk</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Dream Project</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Clips</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Knowledge Resources</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">In the News</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <h1>Hikmah...the words of wisdom</h1>
-          <p>Discover research, publications, and more!</p>
-        </div>
-      </section>
+      .counter p {
+        font-size: 16px;
+      }
+    }
 
-      <!-- Blog Section -->
-      <section class="container my-5">
-        <h2 class="text-center mb-4">Latest Blog Posts</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card blog-card">
-              <img src="./images/sky-nature-photo-with-motivative-quotes.jpg" class="card-img-top" alt="Blog Post 1">
-              <div class="card-body">
-                <h5 class="card-title">Blog Post 1</h5>
-                <p class="card-text">Short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card blog-card">
-              <img src="./images/sky-nature-photo-with-motivative-quotes.jpg" class="card-img-top" alt="Blog Post 2">
-              <div class="card-body">
-                <h5 class="card-title">Blog Post 2</h5>
-                <p class="card-text">Another description of a blog post...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card blog-card">
-              <img src="./images/sky-nature-photo-with-motivative-quotes.jpg" class="card-img-top" alt="Blog Post 3">
-              <div class="card-body">
-                <h5 class="card-title">Blog Post 3</h5>
-                <p class="card-text">Description for a third blog post...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
+    /* Blog Section */
+    .blog-card img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Awards Section */
+    .awards-section {
+      background-color: #ffffff;
+      padding: 50px 0;
+    }
+
+    /* Logo Cards */
+    .logo-card {
+      border: none;
+      background-color: #ffffff;
+      padding: 20px;
+      height: 350px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .logo-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-img {
+      height: 150px;
+      object-fit: contain;
+      padding: 10px;
+      width: auto;
+
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Image Fixes */
+    .img-fixed {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">K.U Rehman Hakeem</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Heart Talk</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Dream Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Clips</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Knowledge Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">In the News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hikmah...the words of wisdom</h1>
+      <p>Discover research, publications, and more!</p>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Latest Blog Posts</h2>
+    <div class="row">
+      <!-- First Row -->
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog1.jpg" class="card-img-top" alt="Blog Post 1">
+          <div class="card-body">
+            <h5 class="card-title">Mind Your Time</h5>
+            <p class="card-text">​It is obvious, as we all know that every human will be spending time in their daily
+              affairs. Hence, fortunate...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
           </div>
         </div>
-      </section>
-      <!-- Counter Section -->
-      <section class="container text-center my-5">
-        <h2>Milestones</h2>
-        <div class="row">
-          <div class="col-md-3">
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog2.jpg" class="card-img-top" alt="Blog Post 2">
+          <div class="card-body">
+            <h5 class="card-title">Intoxicants: The Mother of All Evils</h5>
+            <p class="card-text">Intoxicant refers to any type of beverage that will cause its consumer to become
+              intoxicated and loses...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog3.jpg" class="card-img-top" alt="Blog Post 3">
+          <div class="card-body">
+            <h5 class="card-title">The Theory of Frustration</h5>
+            <p class="card-text">The recent debate whether to celebrate the inclusion of Kashmiri Youth in Indian
+              Administrative Services...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Second Row -->
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog4.jpg" class="card-img-top" alt="Blog Post 4">
+          <div class="card-body">
+            <h5 class="card-title">Suspended Soul</h5>
+            <p class="card-text">As per the Oxford dictionary ‘Debt’ is a sum of money that is owed or due. There are
+              two scenarios in which a person would want...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog5.jpg" class="card-img-top" alt="Blog Post 5">
+          <div class="card-body">
+            <h5 class="card-title">Beyond The Thirst and Hunger</h5>
+            <p class="card-text">Allah Subhaanahu Wata'aala mentions in al-Qur'an: "o you who have believed, decreed
+              upon you is fasting as it was decreed upon those before you"...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card">
+          <img src="./images/blog6.jpg" class="card-img-top" alt="Blog Post 6">
+          <div class="card-body">
+            <h5 class="card-title">Life After Ramadhan - Introspection</h5>
+            <p class="card-text">Ramadhan is a month of training and preparation to restart life in a disciplined
+              manner. This Holy month came like seasonal rain and passed...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-4">
+      <a href="#" class="btn btn-outline-primary btn-lg">Show More</a>
+    </div>
+  </section>
+
+
+
+  <!-- Counter Section -->
+  <!-- Modified Counter (Milestones) Section -->
+  <section class="counter p-5">
+    <div class="container text-center my-5">
+      <h2 class="mb-4">Milestones</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="counter-item">
+            <div class="counter-icon">
+              <i class="bi bi-person-check"></i> <!-- Bootstrap Icons -->
+            </div>
             <div class="counter-circle">20</div>
             <p>Conferences Attended</p>
           </div>
-          <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+          <div class="counter-item">
+            <div class="counter-icon">
+              <i class="bi bi-journal-check"></i>
+            </div>
             <div class="counter-circle">15</div>
             <p>Reviewer of Journals</p>
           </div>
-          <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+          <div class="counter-item">
+            <div class="counter-icon">
+              <i class="bi bi-book-half"></i>
+            </div>
             <div class="counter-circle">5</div>
             <p>Books</p>
           </div>
-          <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+          <div class="counter-item">
+            <div class="counter-icon">
+              <i class="bi bi-file-earmark-text"></i>
+            </div>
             <div class="counter-circle">50+</div>
             <p>Research Papers</p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- Awards Section -->
-      <section class="awards-section">
+  <!-- New Section with Image and Text -->
+  <section class="container my-5">
+    <div class="row align-items-center">
+      <!-- Image Column -->
+      <div class="col-md-6">
+        <img src="./images/1724174_orig.jpg" alt="Descriptive Image" class="img-fluid rounded">
+      </div>
+
+      <!-- Text Column -->
+      <div class="col-md-6">
+        <h2 class="mb-4">Insightful Research</h2>
+        <p>
+          Khalid ul Rehman Hakeem has been actively involved in groundbreaking research that delves into various fields
+          of science. His work spans across multiple disciplines, bringing insightful knowledge and contributing to
+          global scientific advancements. His dedication to research has earned him numerous accolades, and his
+          contributions have had a lasting impact on the academic community.
+        </p>
+        <p>
+          Explore some of his recent publications, and stay updated with the ongoing projects that aim to change the
+          landscape of modern science.
+        </p>
+        <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Horizontal Cards Section -->
+
+
+  <!-- Custom Styles -->
+  <!-- Awards Section -->
+  <section class="awards-section my-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Awards & Fellowships</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-3 col-sm-6 mb-4"> <!-- Added margin-bottom for mobile view -->
+          <div class="card text-center h-100 logo-card">
+            <img src="./images/who.jpg" class="card-img-top logo-img" alt="AICTE">
+            <div class="card-body">
+              <h5 class="card-title">UGC fellowship for meritorious science students (2008-2011)</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4"> <!-- Added margin-bottom for mobile view -->
+          <div class="card text-center h-100 logo-card">
+            <img src="./images/logotubitak.svg" class="card-img-top logo-img" alt="JNTUK">
+            <div class="card-body">
+              <h5 class="card-title">TUBITAK Visiting Scientist Fellowship (May-June, 2014)</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4"> <!-- Added margin-bottom for mobile view -->
+          <div class="card text-center h-100 logo-card">
+            <img src="./images/UGC_L.png" class="card-img-top logo-img" alt="NBA">
+            <div class="card-body">
+              <h5 class="card-title">Marquis Who’s Who in the World (2014 & 2015 Editions)</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <section class="awards-section">
         <div class="container">
           <h2 class="text-center mb-4">Awards & Fellowships</h2>
           <p class="text-center">Recipient of Prestigious University Grants Commission’s (Govt. Of India) fellowship for meritorious students in science (2008-2011)</p>
            <p class="text-center"> Recipient of the Scientific and Technological Research Council of Turkey (TUBITAK) Fellowships for Visiting Scientists (May-June, 2014)</p>
             <p class="text-center">xMarquis Who’s Who in the World (The 2014 & 2015 Editions)</p>
         </div>
-      </section>
+      </section> -->
 
-      <!-- Contact Section -->
-      <section class="contact-form">
-        <div class="container">
-          <h2 class="text-center mb-4">Book an Appointment</h2>
-          <form>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+  <!-- Button instead of Contact Form -->
+  <section class="text-center my-5">
+    <a href="/appointment" class="btn btn-primary btn-lg">Book an Appointment</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Links -->
+        <h5>Quick Link</h5>
+        <div class="row">
+          <div class="col">
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Publications</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Heart Talk</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled">
+              <li><a href="#">Dream Project</a></li>
+              <li><a href="#">Clips</a></li>
+              <li><a href="#">Knowledge Resources</a></li>
+              <li><a href="#">In the News</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="col-md-6 text-md-end">
+            <h5>Follow Me</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://twitter.com" target="_blank" class="text-decoration-none">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="24" height="24">
+                  Twitter
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com" target="_blank" class="text-decoration-none">
+                  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="24"
+                    height="24"> LinkedIn
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com" target="_blank" class="text-decoration-none">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="24"
+                    height="24"> Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+        <div class="text-center mt-3">
+          <p>&copy; 2024 Khalid ul Rehman Hakeem. All Rights Reserved.</p>
+        </div>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
